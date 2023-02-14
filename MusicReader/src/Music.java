@@ -12,6 +12,10 @@ public class Music {
     private String path;
     private int id;
 
+    public void setPath(String path) {
+        this.path = path;
+    }
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -38,7 +42,7 @@ public class Music {
 
     @Override
     public String toString() {
-        return "Music [title=" + title + ", author=" + author + ", picture=" + picture + ", path=" + path + ", id=" + id
+        return "\nMusic [title= " + title + ", author= " + author + ", picture= " + picture + ", path= " + path + ", id= " + id
                 + "]";
     }
 }

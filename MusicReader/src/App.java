@@ -4,7 +4,12 @@ public class App {
         // test.setId(1);
         // System.out.println(test.toString());
 
-        Folder testFolder = new Folder("music", "MusicReader\\src\\music");
+        Folder testFolder = new Folder("music", "MusicReader/src/music");
         System.out.println(testFolder.toString());
+        testFolder.getFile();
+
+        Folder testFolder2 = new Folder("music2", "MusicReader/src/music2");
+        System.out.println(testFolder2.toString());
+        testFolder2.getFile();
     }
 }
