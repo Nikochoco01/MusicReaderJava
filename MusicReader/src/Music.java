@@ -12,10 +12,26 @@ public class Music {
     private String path;
     private int id;
 
-    public void setPath(String path) {
-        this.path = path;
+    public String getTitle() {
+        return title;
     }
-    
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -32,7 +48,7 @@ public class Music {
             
             this.title = title;
             this.author = artist;
-            this.picture = coverArt;
+            this.picture = !coverArt.isEmpty() ? coverArt : "noPicture";
             this.path = path;
             this.id = 0;
         } catch (Exception e) {

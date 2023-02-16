@@ -1,15 +1,30 @@
+//import java.io.File;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        // Music test = new Music("MusicReader\\src\\music\\Tiësto - 10_35 (feat. Tate McRae).mp3");
-        // test.setId(1);
-        // System.out.println(test.toString());
 
-        Folder testFolder = new Folder("music", "MusicReader/src/music");
-        System.out.println(testFolder.toString());
-        testFolder.getFile();
+        // File MeloReader = new File("C:\\Users\\Nikochoco01\\Documents\\MeloReader-Playlist");
 
-        Folder testFolder2 = new Folder("music2", "MusicReader/src/music2");
-        System.out.println(testFolder2.toString());
-        testFolder2.getFile();
+        // boolean res = MeloReader.mkdir();
+
+        // if(res) {
+        //   System.out.println("Le dossier a été créé.");
+        // }
+        // else {
+        //   System.out.println("Le dossier existe déjà.");
+        // }
+
+         Playlist playlist = new Playlist();
+
+         playlist.addMusic("MusicReader/src/music");
+         playlist.addMusic("MusicReader/src/music2");
+         System.out.println(playlist.toString());
+         System.out.println(playlist.readIdPlaylist(2));
+
+        //  Folder testFolder = new Folder("music2", "MusicReader/src/music2");
+        //  testFolder.addMusic();
+        //  System.out.println(testFolder.toString());
+        //  System.out.println(testFolder.readIdPlaylist(0));
+
     }
 }

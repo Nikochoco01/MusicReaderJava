@@ -6,23 +6,37 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Folder extends Playlist{
-    private String name;
-    private String path;
+public class Playlist{
     private int counter; // count the number of element in playlist this is equally the id of music in playlist
     private List<Music> content = new ArrayList<Music>();
-
-    public Folder(String name , String path){
-            this.name = name;
-            this.path = path;
-    }
 
     public List<Music> getContent() {
         return content;
     }
 
-    public void addMusic() throws IOException{
-        Path folderPath = Paths.get(this.path);
+    public Playlist() {
+        this.counter = 0;
+    }
+
+    public String readIdPlaylist(int id){
+        for(Music music : this.getContent()){
+            if(music.getId() == id){
+                return music.getId() + "~" + music.getTitle() + "~" + music.getAuthor() + "~" + music.getPicture() + "~" + music.getPath();
+            }
+        }
+        return null;
+    }
+
+    public void removeFromPlaylist(int id){
+        for(Music music : content){
+            if(music.getId() == id){
+               content.remove(music);
+            }
+        }
+    }
+
+    public void addMusic(String path) throws IOException{
+        Path folderPath = Paths.get(path);
         try(DirectoryStream<Path> folderStream = Files.newDirectoryStream(folderPath , "*.{mp3}")){
             for(Path file : folderStream){
                 Music music = new Music(file.toString());
@@ -35,12 +49,6 @@ public class Folder extends Playlist{
 
     @Override
     public String toString() {
-        return "Folder [name=" + name + ", path=" + path + ", content=" + content + "]";
-    }
-
-    @Override
-    public String readIdPlaylist(int id) {
-        // TODO Auto-generated method stub
-        return super.readIdPlaylist(id);
+        return "Playlist [content=" + content + "]";
     }
 }
