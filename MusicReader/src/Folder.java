@@ -11,10 +11,17 @@ public class Folder extends Playlist{
     private String path;
     private int counter; // count the number of element in playlist this is equally the id of music in playlist
     private List<Music> content = new ArrayList<Music>();
+    private int musicLoaded;
+
+    public int getMusicLoaded() {
+        return musicLoaded;
+    }
 
     public Folder(String name , String path){
             this.name = name;
             this.path = path;
+            this.counter = 1;
+            this.musicLoaded = 1;
     }
 
     public List<Music> getContent() {
@@ -42,5 +49,29 @@ public class Folder extends Playlist{
     public String readIdPlaylist(int id) {
         // TODO Auto-generated method stub
         return super.readIdPlaylist(id);
+    }
+
+    @Override
+    public void removeFromPlaylist(int id) {
+        // TODO Auto-generated method stub
+        super.removeFromPlaylist(id);
+    }
+
+    @Override
+    public String readNext() {
+        // TODO Auto-generated method stub
+       return super.readNext();
+    }
+
+    @Override
+    public String readPrevious() {
+        // TODO Auto-generated method stub
+       return super.readPrevious();
+    }
+
+    @Override
+    public void setMusicLoaded(int musicLoaded) {
+        // TODO Auto-generated method stub
+        super.setMusicLoaded(musicLoaded);
     }
 }

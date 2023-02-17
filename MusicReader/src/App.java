@@ -19,12 +19,20 @@ public class App {
          playlist.addMusic("MusicReader/src/music");
          playlist.addMusic("MusicReader/src/music2");
          System.out.println(playlist.toString());
-         System.out.println(playlist.readIdPlaylist(2));
 
-        //  Folder testFolder = new Folder("music2", "MusicReader/src/music2");
+
+        //  System.out.println(playlist.readIdPlaylist(3));
+
+        //  System.out.println(playlist.readNext());
+        //  System.out.println(playlist.readPrevious());
+
+
+        //  Folder testFolder = new Folder("2022", "E:/Music/2022");
         //  testFolder.addMusic();
         //  System.out.println(testFolder.toString());
-        //  System.out.println(testFolder.readIdPlaylist(0));
+        //  System.out.println(testFolder.readIdPlaylist(1));
 
+        // System.out.println(testFolder.readNext());
+        // System.out.println(testFolder.readPrevious());
     }
 }
