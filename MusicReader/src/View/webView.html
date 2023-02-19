@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="music-control">
+        <audio src="E:\Music\2022\Zombie First to Eleven.mp3" controls id="music-reader"></audio>
+        <img src="" alt="default picture">
+
+        <div class="music-control-player-btn">
+            <button class="player-btn" id="player-btn-previous"> <i> previous </i> </button>
+            <button class="player-btn" id="player-btn-play-pause"> <i> play/pause </i> </button>
+            <button class="player-btn" id="player-btn-next"> <i> next </i> </button>
+            <button class="player-btn" id="player-btn-repeat"> <i> repeat </i> </button>
+        </div>
+
+        <div class="music-control-player-volume">
+            <input type="range" id="player-volume-range">
+            <label for="player-volume-range"> volume lvl <i> icon </i> </label>
+            <button class="player-btn" id="player-btn-mute"> <i> mute </i> </button>
+        </div>
+        <input type="range" id="player-time-range">
+        <label for="player-time-range"> <span id="player-time-progress"> 00:00:00 </span> / <span id="player-time-total"> 00:00:00</span> </label>
+    </div>
+
+    <div class="music-equalizer">
+
+    </div>
+
+    <div class="music-playlist">
+
+    </div>
+</body>
+</html>

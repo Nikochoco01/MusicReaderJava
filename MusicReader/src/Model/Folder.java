@@ -48,31 +48,26 @@ public class Folder extends Playlist{
 
     @Override
     public String readIdPlaylist(int id) {
-        // TODO Auto-generated method stub
         return super.readIdPlaylist(id);
     }
 
     @Override
     public void removeFromPlaylist(int id) {
-        // TODO Auto-generated method stub
         super.removeFromPlaylist(id);
     }
 
     @Override
     public String readNext() {
-        // TODO Auto-generated method stub
        return super.readNext();
     }
 
     @Override
     public String readPrevious() {
-        // TODO Auto-generated method stub
        return super.readPrevious();
     }
 
     @Override
     public void setMusicLoaded(int musicLoaded) {
-        // TODO Auto-generated method stub
         super.setMusicLoaded(musicLoaded);
     }
 }

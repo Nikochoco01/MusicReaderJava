@@ -1,11 +1,21 @@
 import Model.*;
-import Controller.*;
+// import Controller.*;
 import View.*;
+
+
+
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 
 //import java.io.File;
 
-public class App {
+public class App extends Application{
     public static void main(String[] args) throws Exception {
+
+        // fonction to start the web view
+        launch(args);
 
         // File MeloReader = new File("C:\\Users\\Nikochoco01\\Documents\\MeloReader-Playlist");
 
@@ -42,5 +52,12 @@ public class App {
         // Folder testFolder3 = new Folder("music3", "MusicReader/src/music3");
         // testFolder3.addMusic();
         // System.out.println(testFolder3.toString());
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        View view = new View();
+        view.loadView("file:///D:/DEV/MusicReaderJava/MusicReader/src/View/webView.html");
+        view.showView();
     }
 }
