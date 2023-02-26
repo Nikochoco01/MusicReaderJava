@@ -30,19 +30,16 @@ public class Playlist{
         this.musicLoaded = 0;
     }
 
-    public String readIdPlaylist(int id){
+    public Music readIdPlaylist(int id){
         if(id <= getContent().size()){
             for(Music music : this.getContent()){
                 if(music.getId() == id){
                     this.setMusicLoaded(id);
-                    return music.getId() + "~" + music.getTitle() + "~" + music.getAuthor() + "~" + music.getPicture() + "~" + music.getPath();
+                    return music;
                 }
             }
         }
-        else{
-            readIdPlaylist(0);
-        }
-        return null;
+        return readIdPlaylist(1);
     }
 
     public void removeFromPlaylist(int id){
@@ -65,11 +62,11 @@ public class Playlist{
         }
     }
 
-    public String readNext(){
+    public Music readNext(){
         return this.readIdPlaylist(++musicLoaded);
     }
 
-    public String readPrevious(){
+    public Music readPrevious(){
        return this.readIdPlaylist(--musicLoaded);
     }
 

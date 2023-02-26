@@ -47,7 +47,7 @@ public class Folder extends Playlist{
     }
 
     @Override
-    public String readIdPlaylist(int id) {
+    public Music readIdPlaylist(int id) {
         return super.readIdPlaylist(id);
     }
 
@@ -57,12 +57,12 @@ public class Folder extends Playlist{
     }
 
     @Override
-    public String readNext() {
+    public Music readNext() {
        return super.readNext();
     }
 
     @Override
-    public String readPrevious() {
+    public Music readPrevious() {
        return super.readPrevious();
     }
 

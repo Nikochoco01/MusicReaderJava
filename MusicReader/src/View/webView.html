@@ -8,23 +8,28 @@
 </head>
 <body>
     <div class="music-control">
-        <audio src="E:\Music\2022\Zombie First to Eleven.mp3" controls id="music-reader"></audio>
-        <img src="" alt="default picture">
+        <audio controls id="music-reader" ontimeupdate="javaObj.updateDuration()"></audio>
+        
+        <div class="music-information">
+            <img alt="default picture" id="player-picture" src="869899.png">
+            <p class="music-title" id="music-title"> Titre inconnu </p>
+            <p class="music-author" id="music-author"> Artiste inconnu </p>
+        </div>
 
         <div class="music-control-player-btn">
-            <button class="player-btn" id="player-btn-previous"> <i> previous </i> </button>
-            <button class="player-btn" id="player-btn-play-pause"> <i> play/pause </i> </button>
-            <button class="player-btn" id="player-btn-next"> <i> next </i> </button>
-            <button class="player-btn" id="player-btn-repeat"> <i> repeat </i> </button>
+            <button class="player-btn" id="player-btn-previous" onclick="javaObj.goPrevious()"> <i> previous </i> </button>
+            <button class="player-btn" id="player-btn-play-pause" onclick="javaObj.play()"> <i> play/pause </i> </button>
+            <button class="player-btn" id="player-btn-next" onclick="javaObj.goNext()"> <i> next </i> </button>
+            <button class="player-btn" id="player-btn-repeat" onclick="javaObj.repeat()"> <i> repeat </i> </button>
         </div>
 
         <div class="music-control-player-volume">
-            <input type="range" id="player-volume-range">
+            <input type="range" id="player-volume-range" min="0" max="1" step="0.1" oninput="javaObj.changeVolume()">
             <label for="player-volume-range"> volume lvl <i> icon </i> </label>
-            <button class="player-btn" id="player-btn-mute"> <i> mute </i> </button>
+            <button class="player-btn" id="player-btn-mute" onclick="javaObj.muteVolume()"> <i> mute </i> </button>
         </div>
-        <input type="range" id="player-time-range">
-        <label for="player-time-range"> <span id="player-time-progress"> 00:00:00 </span> / <span id="player-time-total"> 00:00:00</span> </label>
+        <input type="range" id="player-time-range" oninput="javaObj.updateTime()">
+        <label for="player-time-range"> <span id="player-time-progress"> 00:00:00 </span> / <span id="player-time-total"> 00:00:00 </span> </label>
     </div>
 
     <div class="music-equalizer">
@@ -32,7 +37,7 @@
     </div>
 
     <div class="music-playlist">
-
+        <input type="file" id="music-add-playlist" change="javaObj.importFile()" directory multiple>
     </div>
 </body>
 </html>

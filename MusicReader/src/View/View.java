@@ -1,28 +1,32 @@
 package View;
-import javafx.scene.Scene;
+
 import javafx.scene.layout.BorderPane;
+import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
+
 
 public class View{
 
-    private Stage stage;
-    private Scene scene;
     private WebView webView;
+    private WebEngine webEngine;
+    private BorderPane root;
 
-    public View(){
-        stage = new Stage();
+    public BorderPane getRoot() {
+        return root;
+    }
+
+    public WebEngine getWebEngine() {
+        return webEngine;
+    }
+
+    public View(String url){
         webView = new WebView();
-        BorderPane root = new BorderPane(webView);
-        scene = new Scene(root , 800 , 800);
-        stage.setScene(scene);
+        webEngine =  webView.getEngine();
+        webEngine.load(url);
+        root = new BorderPane(webView);
     }
 
-    public void showView(){
-        stage.show();
-    }
+    public void displayPlaylist(){
 
-    public void loadView(String url){
-        webView.getEngine().load(url);
     }
 }
